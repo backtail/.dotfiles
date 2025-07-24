@@ -1,5 +1,8 @@
 { pkgs, ... }:
-{
+{ 
+  # Create group
+  users.groups.plugdev = {};
+
   users.users.gax = {
     isNormalUser = true;
     shell = pkgs.zsh;
@@ -10,6 +13,5 @@
       "dialout"
       "plugdev"
     ];
-    packages = with pkgs; [ ];
   };
 }
