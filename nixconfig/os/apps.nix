@@ -9,7 +9,6 @@
     thunderbird
     qjackctl
     drawio
-    vlc
     inkscape-with-extensions
     spotify
     freecad
