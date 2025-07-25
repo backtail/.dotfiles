@@ -3,11 +3,16 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    # Terminal
+    cosmic-term
+
+    # Filemanager
+    nautilus
+
     # Apps
     firefox
     kicad
     thunderbird
-    qjackctl
     drawio
     inkscape-with-extensions
     spotify
@@ -18,8 +23,12 @@
     bottles
 
     # Audio
+    qjackctl
     alsa-scarlett-gui
     reaper
     mixxx
+
+    # GTK look UI
+    nwg-look
   ];
 }
