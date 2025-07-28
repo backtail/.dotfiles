@@ -10,6 +10,7 @@
     ./os/fonts.nix
     ./os/apps.nix
     ./os/udev.nix
+    ./os/security.nix
     ./os/misc.nix
   ];
 }

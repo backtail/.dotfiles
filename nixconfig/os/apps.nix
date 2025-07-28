@@ -2,6 +2,7 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  programs.firefox.enable = true;
   environment.systemPackages = with pkgs; [
     # Terminal
     cosmic-term
@@ -10,7 +11,6 @@
     nautilus
 
     # Apps
-    firefox
     kicad
     thunderbird
     drawio
@@ -27,8 +27,5 @@
     alsa-scarlett-gui
     reaper
     mixxx
-
-    # GTK look UI
-    nwg-look
   ];
 }
