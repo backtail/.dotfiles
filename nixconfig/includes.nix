@@ -12,5 +12,6 @@
     ./os/udev.nix
     ./os/security.nix
     ./os/misc.nix
+    ./os/backup.nix
   ];
 }
