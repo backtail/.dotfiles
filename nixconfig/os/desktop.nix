@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
   # Login
-  services.displayManager.ly.enable = true;
+  services.xserver.xkb.layout = "de";
+  services.displayManager.gdm.enable = true;
 
   # Gnome
   services.desktopManager.gnome.enable = true;
