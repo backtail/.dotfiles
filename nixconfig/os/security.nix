@@ -13,5 +13,6 @@
     pinentry-gtk2
     gnupg
     pass
+    protonvpn-gui
   ];
 }
