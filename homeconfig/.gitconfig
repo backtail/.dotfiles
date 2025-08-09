@@ -1,3 +1,6 @@
 [user]
 	email = accounts@maxgenson.de
 	name = backtail
+
+[includeIf "gitdir:~/dev/KOMA/**"]
+    path = ~/dev/KOMA/.gitconfig
