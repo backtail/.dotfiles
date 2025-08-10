@@ -1,6 +1,11 @@
 [user]
-	email = accounts@maxgenson.de
-	name = backtail
+    email = accounts@maxgenson.de
+    username = backtail
+    name = Max Genson
+[checkout]
+    defaultRemote = origin
+[core]
+    excludesfile = ~/.config/git/ignore
 
 [includeIf "gitdir:~/dev/KOMA/**"]
     path = ~/dev/KOMA/.gitconfig
