@@ -22,7 +22,24 @@
 
     # Hyprland
     hyprpanel
+    hyprlock
+    hypridle
     fuzzel
-    swaybg
+
+    # Hyprpanel Deps
+    brightnessctl
+    wireplumber
+    bluez
+    bluez-tools
+    networkmanager # already included in gnome (i think)
+    dart-sass
+    upower # already included in gnome (probably)
+    grimblast
+    power-profiles-daemon
+    matugen
+    pywal
+    swww
   ];
+
+  services.gvfs.enable = true;
 }
