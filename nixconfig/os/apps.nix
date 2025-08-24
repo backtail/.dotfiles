@@ -5,7 +5,7 @@
   programs.firefox.enable = true;
   environment.systemPackages = with pkgs; [
     # Terminal
-    cosmic-term
+    blackbox-terminal
 
     # Filemanager
     nautilus
