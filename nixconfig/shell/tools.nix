@@ -9,6 +9,8 @@
     tre-command
     wl-clipboard
     usbutils
+    shellify
+    nix-search
   ];
 
   programs.zoxide = {
