@@ -13,5 +13,6 @@
     ./os/security.nix
     ./os/misc.nix
     ./os/backup.nix
+    ./os/vpn.nix
   ];
 }
