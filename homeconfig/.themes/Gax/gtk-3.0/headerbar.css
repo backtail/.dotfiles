@@ -1,0 +1,88 @@
+.header-bar {
+    background-image: linear-gradient(to bottom,
+                         shade(@theme_bg_color, 1.1),
+                         shade(@theme_bg_color, 0.9));
+    border-bottom: 1px solid shade(@theme_bg_color, 0.7);
+}
+
+.header-bar .button.titlebutton {
+    /* Style for min/max/close buttons */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.header-bar,
+headerbar {
+    background-image: linear-gradient(to bottom,
+                         shade(@theme_bg_color, 1.1),
+                         shade(@theme_bg_color, 0.9));
+    border: none;
+    border-bottom: 1px solid shade(@theme_bg_color, 0.7);
+    box-shadow: none;
+    padding: 0 6px; /* Add some padding */
+}
+
+.header-bar .windowhandle,
+headerbar .windowhandle {
+    background: transparent; /* This makes the handle not interfere */
+}
+
+.header-bar .title,
+headerbar .title {
+    color: @theme_fg_color;
+    font-weight: bold;
+}
+
+.header-bar .subtitle,
+headerbar .subtitle {
+    color: alpha(@theme_fg_color, 0.7); /* Slightly transparent subtitle */
+}
+
+.header-bar .button.titlebutton,
+headerbar .button.titlebutton {
+    background: transparent;
+    border: none;
+    color: alpha(@theme_fg_color, 0.7);
+    box-shadow: none;
+    padding: 8px; /* Make the hit area larger */
+}
+
+.header-bar .button.titlebutton:hover,
+headerbar .button.titlebutton:hover {
+    background: alpha(black, 0.1);
+    color: @theme_fg_color;
+}
+
+.header-bar .button.titlebutton:active,
+headerbar .button.titlebutton:active {
+    background: alpha(black, 0.2);
+}
+
+.header-bar .button.titlebutton.close:hover,
+headerbar .button.titlebutton.close:hover {
+    background-color: #ff0000; /* Classic red for close */
+    color: white;
+}
+
+.header-bar button,
+headerbar button {
+    background: alpha(white, 0.1);
+    border: 1px solid alpha(black, 0.2);
+    border-radius: 4px;
+    color: @theme_fg_color;
+    min-height: 24px;
+    min-width: 24px;
+    padding: 4px;
+}
+
+.header-bar button:hover,
+headerbar button:hover {
+    background: alpha(white, 0.15);
+    border-color: alpha(black, 0.3);
+}
+
+.header-bar button:active,
+headerbar button:active {
+    background: alpha(black, 0.1);
+}
