@@ -15,4 +15,9 @@
     pass
     protonvpn-gui
   ];
+
+  programs.ausweisapp = {
+    enable = true;
+    openFirewall = true;
+  };
 }
