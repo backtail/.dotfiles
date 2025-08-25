@@ -1,0 +1,9 @@
+[config]
+
+[templates.hyprpanel_custom_modules]
+input_path = './templates/hyprpanel_modules.scss'
+output_path = '~/.config/hyprpanel/colors.scss'
+
+[templates.fuzzel]
+input_path = './templates/fuzzel.ini'
+output_path = '~/.config/fuzzel/colors.ini'
