@@ -63,6 +63,7 @@
         "power",
         "ram",
         "cpu",
+        "custom/thinkpad",
         "netstat",
         "cava"
       ],
@@ -169,7 +170,7 @@
   "theme.bar.buttons.modules.worldclock.spacing": "0.5em",
   "theme.bar.buttons.modules.power.spacing": "0.0em",
   "menus.clock.weather.interval": 100000,
-  "wallpaper.image": "/home/gax/Pictures/cutsie us.jpeg",
+  "wallpaper.image": "/home/gax/Pictures/Wallpapers/shrooms.jpg",
   "theme.matugen_settings.scheme_type": "content",
   "theme.matugen_settings.variation": "monochrome_2",
   "wallpaper.enable": true,

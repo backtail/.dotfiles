@@ -1,1 +1,20 @@
-{}
+{
+    "custom/thinkpad": {
+        "icon": "",
+        "label": "{sign}{percentage}W",
+        "tooltip": "{status}",
+        "truncationSize": -1,
+        "execute": "bash ~/.config/hyprpanel/scripts/thinkpad-power.sh",
+        "executeOnAction": "",
+        "interval": 3000,
+        "hideOnEmpty": false,
+        "scrollThreshold": 1,
+        "actions": {
+            "onLeftClick": "",
+            "onRightClick": "",
+            "onMiddleClick": "",
+            "onScrollUp": "",
+            "onScrollDown": ""
+        }
+    }
+}

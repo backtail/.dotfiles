@@ -1,0 +1,15 @@
+@import "/home/gax/.config/hyprpanel/colors.scss";
+
+@include styleModule(
+    'cmodule-thinkpad',
+    (
+            'text-color': $secondary,
+            'icon-color': $secondary,
+            'icon-background': $inverse_on_surface,
+            'label-background': $inverse_on_surface,
+            'inner-spacing': 0.0em,
+            'border-enabled': false,
+            'border-color': $primary,
+            'icon-size': 1.2em
+        )
+);
