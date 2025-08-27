@@ -17,6 +17,10 @@ function zshaddhistory() {
   fi
 }
 
+if uwsm check may-start; then
+    exec uwsm start hyprland-uwsm.desktop
+fi
+
 alias cd="z"
 alias ns="nix-shell"
 alias lgit="lazygit"

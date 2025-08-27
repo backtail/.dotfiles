@@ -1,25 +1,24 @@
 { pkgs, ... }:
 {
-  # Login
-  services.xserver.xkb.layout = "de";
-  services.displayManager.gdm.enable = true;
-
-  # Gnome
-  services.desktopManager.gnome.enable = true;
+  # WM Wrapper for systemd
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors.hyprland = {      
+      prettyName = "Hyprland";
+      comment = "Hyprland compositor managed by UWSM";
+      binPath = "/run/current-system/sw/bin/Hyprland";
+    };
+  };
 
   # Hyprland
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
 
   # Packages
   environment.systemPackages = with pkgs; [
-
-    # Gnome
-    gnome-tweaks
-    gnomeExtensions.forge
-    gnomeExtensions.dynamic-panel
-    gnomeExtensions.tweaks-in-system-menu
-    gnomeExtensions.thinkpad-battery-threshold
-
     # Hyprland
     hyprpanel
     hyprlock
@@ -29,17 +28,21 @@
     # Hyprpanel Deps
     brightnessctl
     wireplumber
-    bluez
     bluez-tools
-    networkmanager # already included in gnome (i think)
     dart-sass
-    upower # already included in gnome (probably)
     grimblast
-    power-profiles-daemon
     matugen
     pywal
     swww
   ];
 
+  # Hyprpanel Services
   services.gvfs.enable = true;
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
 }
