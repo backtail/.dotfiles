@@ -16,6 +16,9 @@
     withUWSM = true;
     xwayland.enable = true;
   };
+  
+  # use wayland for electron apps
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Packages
   environment.systemPackages = with pkgs; [
@@ -34,6 +37,9 @@
     matugen
     pywal
     swww
+    
+    # GTK icons & themes
+    adwaita-icon-theme
   ];
 
   # Hyprpanel Services
