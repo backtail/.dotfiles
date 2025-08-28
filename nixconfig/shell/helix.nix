@@ -9,6 +9,7 @@
     ruff # Python
     bash-language-server
     rust-analyzer
+    hyprls
 
     # Debuggers
     lldb # C, Rust
