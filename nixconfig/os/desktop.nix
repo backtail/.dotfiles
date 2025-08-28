@@ -29,7 +29,11 @@
     fuzzel
 
     # Hyprpanel Deps
+    libgtop
     brightnessctl
+    gtksourceview
+    libsoup_3
+    ags
     wireplumber
     bluez-tools
     dart-sass
