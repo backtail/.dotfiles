@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
     ./shell/zsh.nix
     ./shell/tools.nix
     ./shell/development.nix
+    ./shell/helix.nix
     ./os/user.nix
     ./os/desktop.nix
     ./os/sound.nix

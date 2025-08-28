@@ -2,7 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     btop
-    helix
     libqalculate
     fzf
     tldr
