@@ -5,7 +5,7 @@
   programs.firefox.enable = true;
   environment.systemPackages = with pkgs; [
     # Terminal
-    blackbox-terminal
+    kitty
 
     # Filemanager
     nautilus
