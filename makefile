@@ -14,7 +14,7 @@ fmt:
 home:
 	stow --verbose --dotfiles --dir=$(HOMECONFIG_DIR) --target=$$HOME --restow ./
 
-nix: fmt
+nix:
 	sudo stow --verbose --dotfiles --dir=$(NIXCONFIG_DIR) --target=/etc/nixos/  --restow ./
 
 all: home fmt nix

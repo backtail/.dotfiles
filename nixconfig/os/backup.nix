@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    kopia-ui
-  ];
+  # environment.systemPackages = with pkgs; [
+    # kopia-ui
+  # ];
 
   services.syncthing = {
     enable = true;

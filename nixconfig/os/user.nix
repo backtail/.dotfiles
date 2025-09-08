@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   # Create group
-  users.groups.plugdev = { };
+  # users.groups.plugdev = { };
 
   users.users.gax = {
     isNormalUser = true;
@@ -11,7 +11,7 @@
       "networkmanager"
       "wheel"
       "dialout"
-      "plugdev"
+      # "plugdev"
     ];
   };
 }

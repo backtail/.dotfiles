@@ -23,6 +23,5 @@
 
   console.keyMap = "de";
   services.printing.enable = true;
-  networking.networkmanager.enable = true;
-  networking.wireless.userControlled.enable = true;
+  # networking.wireless.userControlled.enable = true;
 }

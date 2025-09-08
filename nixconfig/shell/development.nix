@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs; [
     git
     lazygit
-    vscode-fhs
+    # vscode-fhs
     gh
     nixfmt-rfc-style
   ];

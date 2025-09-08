@@ -6,11 +6,11 @@
     ./shell/development.nix
     ./shell/helix.nix
     ./os/user.nix
-    ./os/desktop.nix
-    ./os/sound.nix
+    # ./os/desktop.nix
+    # ./os/sound.nix
     ./os/fonts.nix
-    ./os/apps.nix
-    ./os/udev.nix
+    # ./os/apps.nix
+    # ./os/udev.nix
     ./os/security.nix
     ./os/misc.nix
     ./os/backup.nix

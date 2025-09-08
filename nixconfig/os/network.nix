@@ -2,9 +2,9 @@
 {
   networking.networkmanager.enable = true;
 
-  services.tailscale.enable = true;
+  # services.tailscale.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    tailscale-systray
-  ];
+  # environment.systemPackages = with pkgs; [
+    # tailscale-systray
+  # ];
 }
