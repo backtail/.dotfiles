@@ -15,5 +15,6 @@
     ./os/misc.nix
     ./os/backup.nix
     ./os/network.nix
+    ./headless/immich.nix
   ];
 }
