@@ -6,6 +6,8 @@
     defaultRemote = origin
 [core]
     excludesfile = ~/.config/git/ignore
+[diff]
+    external = difft
 
 [includeIf "gitdir:~/dev/KOMA/**"]
     path = ~/dev/KOMA/.gitconfig

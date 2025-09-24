@@ -6,5 +6,6 @@
     vscode-fhs
     gh
     nixfmt-rfc-style
+    difftastic
   ];
 }
