@@ -3,7 +3,7 @@
   # WM Wrapper for systemd
   programs.uwsm = {
     enable = true;
-    waylandCompositors.hyprland = {      
+    waylandCompositors.hyprland = {
       prettyName = "Hyprland";
       comment = "Hyprland compositor managed by UWSM";
       binPath = "/run/current-system/sw/bin/Hyprland";
@@ -16,7 +16,7 @@
     withUWSM = true;
     xwayland.enable = true;
   };
-  
+
   # use wayland for electron apps
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -41,6 +41,10 @@
     matugen
     pywal
     swww
+
+    # Nautilus
+    loupe     # Image viwer
+    papers    # PDF viewer
     
     # GTK icons & themes
     adwaita-icon-theme
