@@ -16,5 +16,6 @@
     ./os/misc.nix
     ./os/backup.nix
     ./os/network.nix
+    ./os/printing.nix
   ];
 }

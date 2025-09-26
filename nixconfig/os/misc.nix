@@ -22,7 +22,7 @@
   };
 
   console.keyMap = "de";
-  services.printing.enable = true;
+  services.envfs.enable = true;
   networking.networkmanager.enable = true;
   networking.wireless.userControlled.enable = true;
 }
