@@ -11,6 +11,11 @@
     drivers = with pkgs; [
       cups-filters
       cups-browsed
+      pkgs.splix
     ];
   };
+
+   environment.systemPackages = [
+    pkgs.splix
+  ];
 }
