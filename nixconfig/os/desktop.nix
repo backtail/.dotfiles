@@ -45,6 +45,7 @@
     # Nautilus
     loupe     # Image viwer
     papers    # PDF viewer
+    font-manager
     
     # GTK icons & themes
     adwaita-icon-theme
