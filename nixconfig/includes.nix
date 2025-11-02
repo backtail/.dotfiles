@@ -6,6 +6,7 @@
     ./shell/development.nix
     ./shell/helix.nix
     ./shell/tui.nix
+    ./shell/nixos-cli.nix
     ./os/user.nix
     ./os/desktop.nix
     ./os/sound.nix
