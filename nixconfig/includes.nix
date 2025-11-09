@@ -19,6 +19,6 @@
     ./os/network.nix
     ./os/printing.nix
     ./os/matrix.nix
-    # ./os/musnix.nix
+    ./os/musnix.nix
   ];
 }
