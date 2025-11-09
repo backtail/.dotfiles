@@ -15,7 +15,7 @@
     ];
   };
 
-   environment.systemPackages = [
+  environment.systemPackages = [
     pkgs.splix
   ];
 }

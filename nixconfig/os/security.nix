@@ -17,7 +17,7 @@
   ];
 
   networking.firewall.checkReversePath = false;
-  
+
   programs.ausweisapp = {
     enable = true;
     openFirewall = true;
