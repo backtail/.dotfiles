@@ -46,6 +46,7 @@
     loupe # Image viwer
     papers # PDF viewer
     font-manager
+    gnome-disk-utility
 
     # GTK icons & themes
     adwaita-icon-theme
