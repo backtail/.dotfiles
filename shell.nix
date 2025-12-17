@@ -6,6 +6,7 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.stow
     pkgs.gnumake
+    pkgs.nixfmt-rfc-style
   ];
 
 }

@@ -1,1 +1,4 @@
 .direnv
+
+# hyprpanel
+homeconfig/.config/hyprpanel/config.json
