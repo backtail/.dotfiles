@@ -157,7 +157,7 @@
   "bar.customModules.cpuTemp.pollingInterval": 3000,
   "bar.customModules.cpu.pollingInterval": 3000,
   "bar.customModules.ram.pollingInterval": 3000,
-  "bar.customModules.ram.labelType": "percentage",
+  "bar.customModules.ram.labelType": "free",
   "bar.customModules.cpu.label": true,
   "bar.customModules.cpu.round": true,
   "bar.customModules.cpuTemp.round": true,
