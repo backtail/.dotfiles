@@ -3,7 +3,6 @@
 
 HISTFILE=~/.histfile
 HISTSIZE=100000
-SAVEHIST=100000
 
 unsetopt beep
 setopt hist_ignore_all_dups
@@ -17,8 +16,9 @@ function zshaddhistory() {
   fi
 }
 
-if uwsm check may-start; then
-    exec uwsm start hyprland-uwsm.desktop
+# Start niri session if not already running
+if [[ -z "$XDG_CURRENT_DESKTOP" ]] || [[ "$XDG_CURRENT_DESKTOP" != "niri" ]]; then
+    niri-session
 fi
 
 alias cd="z"

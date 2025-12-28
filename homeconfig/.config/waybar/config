@@ -1,0 +1,73 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "height": 27,
+  "spacing": 20,
+  "modules-left": ["cpu", "memory", "network"],
+  "modules-center": ["clock"],
+  "modules-right": ["power-profiles-daemon", "custom/battery-wattage", "pulseaudio", "tray"],
+  
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %B %d, %Y}"
+  },
+  
+  "cpu": {
+    "interval": 2,
+    "format": "󰻠 {usage}%",
+    "tooltip": false
+  },
+  
+  "memory": {
+    "interval": 2,
+    "format": "󰍛 {used} GiB",
+    "tooltip": false
+  },
+    
+  "network": {
+    "format-wifi": "󰖩 ↑{bandwidthUpBits} ↓{bandwidthDownBits}",
+    "format-ethernet": "󰈀 ↑{bandwidthUpBits} ↓{bandwidthDownBits}",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{ifname}: {ipaddr}\n⬆ {bandwidthUpBits}\n⬇ {bandwidthDownBits}",
+    "interval": 3
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}",
+    "tooltip": true,
+    "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+    },
+    "on-click": "pavelp --toggle" 
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+  
+  "custom/battery-wattage": {
+    "exec": "~/.config/waybar/battery-wattage.sh",
+    "interval": 3,
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true
+  },
+  
+  "tray": {
+    "spacing": 8
+  }
+}
