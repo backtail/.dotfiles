@@ -6,7 +6,7 @@
   "margin-right": 0,
   "height": 27,
   "spacing": 20,
-  "modules-left": ["cpu", "memory", "network"],
+  "modules-left": ["custom/power", "cpu", "memory", "network"],
   "modules-center": ["clock"],
   "modules-right": ["power-profiles-daemon", "custom/battery-wattage", "pulseaudio", "tray"],
   
@@ -65,6 +65,18 @@
     "return-type": "json",
     "format": "{}",
     "tooltip": true
+  },
+
+  "custom/power": {
+	"format" : "⏻ ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "~/.config/waybar/power_menu.xml",
+		"menu-actions": {
+			"shutdown": "systemctl shutdown",
+			"reboot": "systemctl reboot",
+			"suspend": "systemctl suspend",
+		},
   },
   
   "tray": {

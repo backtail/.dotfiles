@@ -15,6 +15,7 @@ window#waybar {
 
 /* All modules styling */
 #clock,
+#custom-power,
 #cpu,
 #memory,
 #pulseaudio,
@@ -38,6 +39,10 @@ window#waybar {
 #cpu {
     color: #94e2d5;
     background: rgba(148, 226, 213, 0.15);
+}
+
+#custom-power {
+    color: #f38ba8;
 }
 
 #memory {
@@ -100,6 +105,10 @@ window#waybar {
     to {
         background-color: rgba(243, 139, 168, 0.3);
     }
+}
+
+custom-power.menu-actions {
+	border-radius: 15px;
 }
 
 /* Tooltip styling */
