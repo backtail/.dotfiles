@@ -1,0 +1,143 @@
+* {
+    border: none;
+    font-family: "FiraCode Nerd Font", monospace;
+    font-size: 15px;
+    font-weight: 500;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(30, 30, 46, 1.0);
+    border-radius: 10px;
+    color: #cdd6f4;
+    margin: 6px 6px 0px 6px;
+}
+
+/* All modules styling */
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#network,
+#power-profiles-daemon,
+#custom-battery-wattage,
+#tray {
+    background: rgba(49, 50, 68, 0.95);
+    border-radius: 12px;
+    padding: 0px 14px;
+    margin: 4px 2px;
+}
+
+#clock {
+    color: #f5e0dc;
+    background: rgba(245, 224, 220, 0.15);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#cpu {
+    color: #94e2d5;
+    background: rgba(148, 226, 213, 0.15);
+}
+
+#memory {
+    color: #74c7ec;
+    background: rgba(116, 199, 236, 0.15);
+}
+
+#pulseaudio {
+    color: #a6e3a1;
+    background: rgba(166, 227, 161, 0.15);
+}
+
+#pulseaudio.muted {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.15);
+}
+
+#network {
+    color: #f9e2af;
+    background: rgba(249, 226, 175, 0.15);
+}
+
+#network.disconnected {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.15);
+}
+
+/* Battery states */
+#custom-battery-wattage {
+    color: #89b4fa;
+    background: rgba(137, 180, 250, 0.15);
+}
+
+#custom-battery-wattage.charging {
+    color: #a6e3a1;
+    background: rgba(166, 227, 161, 0.15);
+}
+
+#custom-battery-wattage.warning {
+    color: #fab387;
+    background: rgba(250, 179, 135, 0.15);
+}
+
+#custom-battery-wattage.critical {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.15);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#tray {
+    background: rgba(49, 50, 68, 0.7);
+}
+
+/* Animation for critical battery */
+@keyframes blink {
+    to {
+        background-color: rgba(243, 139, 168, 0.3);
+    }
+}
+
+/* Tooltip styling */
+tooltip {
+    background: rgba(30, 30, 46, 0.95);
+    border-radius: 12px;
+    border: 1px solid rgba(137, 180, 250, 0.3);
+    font-family: "FiraCode Nerd Font", monospace;
+}
+
+tooltip label {
+    color: #cdd6f4;
+    padding: 6px 12px;
+}
+
+#network {
+    color: #f9e2af;
+    background: rgba(249, 226, 175, 0.15);
+    border-radius: 12px;
+    padding: 0px 14px;
+    margin: 4px 2px;
+}
+
+#network.wifi {
+    color: #89b4fa;  /* Different color for WiFi */
+    background: rgba(137, 180, 250, 0.15);
+}
+
+#network.ethernet {
+    color: #74c7ec;  /* Different color for Ethernet */
+    background: rgba(116, 199, 236, 0.15);
+}
+
+#network.disconnected {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.15);
+}
+
+#network:hover {
+    background: rgba(249, 226, 175, 0.25);
+}

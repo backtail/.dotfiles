@@ -20,5 +20,7 @@
     ./os/printing.nix
     ./os/matrix.nix
     ./os/musnix.nix
+
+    ./temp.nix
   ];
 }
