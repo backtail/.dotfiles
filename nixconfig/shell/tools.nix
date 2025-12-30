@@ -11,6 +11,7 @@
     usbutils
     shellify
     nix-search
+    mdcat
   ];
 
   programs.zoxide = {
