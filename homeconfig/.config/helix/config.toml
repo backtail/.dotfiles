@@ -1,0 +1,17 @@
+theme = "dark_plus"
+
+[editor]
+continue-comments = false
+rulers = [80]
+
+[editor.indent-guides]
+render = true
+character = "▏"
+
+[keys.normal]
+C-s = ":w"
+C-x = ":x"
+
+[keys.insert]
+C-c = "normal_mode"
+ret = "normal_mode"
