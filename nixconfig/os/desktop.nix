@@ -33,10 +33,7 @@
 
   services.blueman.enable = true;
 
-  # Hyprpanel Services
   services.gvfs.enable = true;
-  services.upower.enable = true;
-  services.power-profiles-daemon.enable = true;
 
   hardware.bluetooth = {
     enable = true;
