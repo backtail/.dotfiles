@@ -23,7 +23,7 @@
     bottles
 
     # Audio
-    qjackctl
+    qpwgraph
     alsa-scarlett-gui
     reaper
     mixxx
