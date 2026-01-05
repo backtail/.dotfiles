@@ -13,6 +13,8 @@
     pavucontrol
     networkmanagerapplet
     waypaper
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
 
     libgtop
     brightnessctl
