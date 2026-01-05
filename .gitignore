@@ -2,3 +2,6 @@
 
 # hyprpanel
 homeconfig/.config/hyprpanel/config.json
+
+# Kicad
+homeconfig/.config/kicad/*/*.json
