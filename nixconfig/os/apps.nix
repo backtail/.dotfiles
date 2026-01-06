@@ -11,7 +11,6 @@
     nautilus
 
     # Apps
-    kicad
     thunderbird
     drawio
     inkscape-with-extensions

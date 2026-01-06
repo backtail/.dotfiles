@@ -22,7 +22,8 @@
     ./os/musnix.nix
     ./os/power.nix
     ./os/colors.nix
+    ./os/kicad.nix
 
     ./temp.nix
   ];
- }
+}
