@@ -1,5 +1,5 @@
-HOMECONFIG_DIR := homeconfig
-NIXCONFIG_DIR := nixconfig
+HOMECONFIG_DIR := home
+NIXCONFIG_DIR := nix
 
 NIX_FILES := $(shell find $(NIXCONFIG_DIR) -name "*.nix" -type f)
 
