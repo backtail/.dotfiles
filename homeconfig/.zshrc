@@ -24,4 +24,4 @@ fi
 alias cd="z"
 alias ns="nix-shell"
 alias lgit="lazygit"
-# alias some_name='bash ./menuScript.sh'
+alias rgst='bash ~/scripts/recursive_git_status.sh'
