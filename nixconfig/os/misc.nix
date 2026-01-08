@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
 
   nix.gc = {
@@ -23,6 +23,4 @@
 
   console.keyMap = "de";
   services.envfs.enable = true;
-  networking.networkmanager.enable = true;
-  networking.wireless.userControlled.enable = true;
 }

@@ -12,6 +12,7 @@
 
     # Apps
     thunderbird
+    ltspice
     drawio
     inkscape-with-extensions
     spotify
@@ -19,7 +20,6 @@
     obsidian
     discord
     telegram-desktop
-    bottles
 
     # Audio
     qpwgraph
