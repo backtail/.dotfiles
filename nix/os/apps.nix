@@ -15,7 +15,6 @@
     ltspice
     drawio
     inkscape-with-extensions
-    spotify
     freecad
     obsidian
     discord

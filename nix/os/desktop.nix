@@ -15,6 +15,7 @@
     waypaper
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
+    gnome-keyring
 
     libgtop
     brightnessctl
@@ -29,7 +30,10 @@
     papers # PDF viewer
     font-manager
     gnome-disk-utility
+    sushi
     polkit_gnome
+    file-roller
+    decibels
 
     # GTK icons & themes
     adwaita-icon-theme
