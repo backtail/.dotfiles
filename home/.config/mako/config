@@ -1,0 +1,32 @@
+format=<b>%s</b>\n<i>%a</i>\n\n%b
+group-by=app-name
+default-timeout=5000
+anchor=top-right
+
+width=350
+margin= 5
+padding=10
+border-size=1
+border-radius=4
+
+background-color=#1E1E1ED0
+text-color=#F6F6F6FF
+border-color=#4C7899FF
+
+max-visible=5
+max-history=15
+history=1
+actions=1
+
+[grouped]
+format=<b>%s</b>\n<i>%gx %a</i>
+
+[urgency=low]
+background-color=#babdb6
+text-color=#2e3436
+icons=0
+
+[urgency=critical]
+background-color=#661E1ED0
+border-color=#FF5555FF
+default-timeout=0
