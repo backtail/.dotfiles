@@ -258,6 +258,7 @@ binds {
     Mod+Ctrl+F { expand-column-to-available-width; }
 
     Mod+C { center-column; }
+    Mod+M { maximize-window-to-edges; }
 
     Mod+Ctrl+C { center-visible-columns; }
 
