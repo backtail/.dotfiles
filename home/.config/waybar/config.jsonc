@@ -8,7 +8,7 @@
   "spacing": 20,
   "modules-left": ["custom/power", "cpu", "memory", "network"],
   "modules-center": ["clock"],
-  "modules-right": ["power-profiles-daemon", "custom/battery-wattage", "pulseaudio", "tray"],
+  "modules-right": ["custom/recent-files", "power-profiles-daemon", "custom/battery-wattage", "pulseaudio", "tray"],
   
   "clock": {
     "format": "{:%H:%M}",
@@ -68,17 +68,16 @@
   },
 
   "custom/power": {
-	"format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "~/.config/waybar/power_menu.xml",
-		"menu-actions": {
-			"shutdown": "systemctl poweroff",
-			"reboot": "systemctl reboot",
-			"suspend": "systemctl suspend",
-		},
+	  "format" : " ",
+    "on-click": "~/.config/waybar/power-menu.sh",
+    "tooltip": false,
   },
-  
+
+  "custom/recent-files": {
+    "format": "",
+    "on-click": "~/.config/waybar/recent-files-picker-fuzzel.sh",
+    "tooltip": false,
+  },
   "tray": {
     "spacing": 8
   }

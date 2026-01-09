@@ -16,6 +16,7 @@ window#waybar {
 /* All modules styling */
 #clock,
 #custom-power,
+#custom-recent-files,
 #cpu,
 #memory,
 #pulseaudio,
@@ -33,7 +34,6 @@ window#waybar {
     color: #f5e0dc;
     background: rgba(245, 224, 220, 0.15);
     font-weight: bold;
-    font-size: 15px;
 }
 
 #cpu {
@@ -42,7 +42,14 @@ window#waybar {
 }
 
 #custom-power {
-    color: #f38ba8;
+    color: #388ae8;
+}
+
+menu {
+    background: rgba(49, 50, 68, 1.0);
+    border-radius: 20px;
+    padding: 4px 4px;
+    margin: 4px 4px;
 }
 
 #memory {
