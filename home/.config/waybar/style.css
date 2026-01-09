@@ -13,6 +13,11 @@ window#waybar {
     margin: 6px 6px 0px 6px;
 }
 
+#custom-launcher {
+    font-size: 32px;
+    padding: 0px 15px 0px 15px;
+}
+
 /* All modules styling */
 #clock,
 #custom-power,
@@ -30,26 +35,9 @@ window#waybar {
     margin: 4px 2px;
 }
 
-#clock {
-    color: #f5e0dc;
-    background: rgba(245, 224, 220, 0.15);
-    font-weight: bold;
-}
-
 #cpu {
     color: #94e2d5;
     background: rgba(148, 226, 213, 0.15);
-}
-
-#custom-power {
-    color: #388ae8;
-}
-
-menu {
-    background: rgba(49, 50, 68, 1.0);
-    border-radius: 20px;
-    padding: 4px 4px;
-    margin: 4px 4px;
 }
 
 #memory {

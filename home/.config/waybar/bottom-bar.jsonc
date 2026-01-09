@@ -1,0 +1,52 @@
+ {
+  "layer": "top",
+  "position": "bottom",
+  "modules-center": ["custom/launcher"],
+  "modules-left": ["wlr/taskbar"],
+  "modules-right": ["pulseaudio", "custom/recent-files", "tray", "clock", "custom/power"],
+  "height": 45,
+
+  "wlr/taskbar": {
+    "icon-size": 35,
+    "on-click": "activate",
+    "format": "{icon}"
+  },
+
+  "custom/launcher": {
+    "format": " ",
+    "on-click": "fuzzel --config=$HOME/.config/fuzzel/fuzzel_with_icons.ini",
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+  
+  "custom/power": {
+	 "format" : " ",
+    "on-click": "~/.config/waybar/power-menu.sh",
+    "tooltip": false,
+  },
+
+  "custom/recent-files": {
+    "format": "",
+    "on-click": "~/.config/waybar/recent-files-picker-fuzzel.sh",
+    "tooltip": false,
+  },
+
+  "tray": {
+    "spacing": 8
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %B %d, %Y}"
+  }
+}
