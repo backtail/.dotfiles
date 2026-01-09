@@ -64,7 +64,8 @@
     "interval": 3,
     "return-type": "json",
     "format": "{}",
-    "tooltip": true
+    "tooltip": true,
+    "on-click": "~/.config/waybar/tlp-manager.sh",
   },
 
   "custom/power": {

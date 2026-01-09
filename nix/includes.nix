@@ -15,7 +15,6 @@
     ./os/udev.nix
     ./os/security.nix
     ./os/misc.nix
-    ./os/backup.nix
     ./os/network.nix
     ./os/printing.nix
     ./os/matrix.nix

@@ -20,4 +20,15 @@
 
     };
   };
+
+  security.polkit.enable = true;
+
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if (action.id == "org.nixos.tlp.setcharge" ||
+          action.id == "org.nixos.tlp.fullcharge") {
+        return polkit.Result.YES;
+      }
+    });
+  '';
 }
