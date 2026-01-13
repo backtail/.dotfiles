@@ -28,6 +28,7 @@ window#waybar {
 #network,
 #power-profiles-daemon,
 #custom-battery-wattage,
+#privacy,
 #tray {
     background: rgba(49, 50, 68, 0.95);
     border-radius: 12px;
@@ -93,6 +94,10 @@ window#waybar {
 
 #tray {
     background: rgba(49, 50, 68, 0.7);
+}
+
+#privacy-item {
+    color: #e06c75;
 }
 
 /* Animation for critical battery */
