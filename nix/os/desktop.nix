@@ -26,8 +26,9 @@
     swww
 
     # GTK apps
-    loupe # Image viwer
-    papers # PDF viewer
+    nautilus
+    loupe
+    papers
     font-manager
     gnome-disk-utility
     sushi
@@ -39,8 +40,12 @@
     adwaita-icon-theme
   ];
 
-  services.blueman.enable = true;
+  programs.nautilus-open-any-terminal = {
+    enable = true;
+    terminal = "kitty";
+  };
 
+  services.blueman.enable = true;
   services.gvfs.enable = true;
 
   hardware.bluetooth = {

@@ -7,9 +7,6 @@
     # Terminal
     kitty
 
-    # Filemanager
-    nautilus
-
     # Apps
     thunderbird
     ltspice
