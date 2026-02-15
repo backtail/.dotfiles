@@ -23,7 +23,7 @@ input {
 }
 
 output "eDP-1" {
-    mode "1920x1080@120.030"
+    mode "1920x1080"
     scale 1.0
     transform "normal"
     position x=0 y=0
@@ -77,6 +77,7 @@ layout {
 }
 
 spawn-at-startup "noctalia-shell"
+spawn-at-startup "swayidle" "-w" "timeout" "300" "niri msg action power-off-monitors" "timeout" "600" "noctalia-shell ipc call sessionMenu lockAndSuspend"
 
 hotkey-overlay {
     skip-at-startup
