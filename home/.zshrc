@@ -4,7 +4,33 @@
 HISTFILE=~/.histfile
 HISTSIZE=100000
 
+export DIRENV_LOG_FORMAT=""  # Disable logging
+export DISABLE_AUTO_TITLE="true"
+
+function direnv() {
+  unfunction "$0"
+  eval "$(command direnv hook zsh)"
+  $0 "$@"
+}
+
+# Prevent multiple hook executions
+if [[ -z "$ZSH_ALREADY_SOURCED" ]]; then
+  export ZSH_ALREADY_SOURCED=1
+        
+  # Only initialize these once
+  if (( $+commands[direnv] )); then
+    eval "$(direnv hook zsh)"
+  fi
+        
+  # Customize prompt to be faster
+  export GIT_PS1_SHOWDIRTYSTATE=0
+  export GIT_PS1_SHOWSTASHSTATE=0
+  export GIT_PS1_SHOWUNTRACKEDFILES=0
+fi
+
+
 unsetopt beep
+unsetopt autocd
 setopt hist_ignore_all_dups
 bindkey -v
 
