@@ -5,7 +5,7 @@
     lazygit
     vscode-fhs
     gh
-    nixfmt-rfc-style
+    nixfmt
     difftastic
   ];
 }
