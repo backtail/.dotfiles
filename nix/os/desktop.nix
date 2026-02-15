@@ -5,19 +5,15 @@
   environment.systemPackages = with pkgs; [
     # Niri
     noctalia-shell
-    swaybg
+    swayidle
     pavucontrol
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     gnome-keyring
 
-    libgtop
-    brightnessctl
-    libnotify
     wireplumber
     bluez
     bluez-tools
-    swww
 
     # GTK apps
     nautilus
