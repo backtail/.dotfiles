@@ -1,4 +1,4 @@
-{ ... }:
+{ config, pkgs, ... }:
 {
   imports = [
     ./shell/zsh.nix
@@ -22,7 +22,10 @@
     ./os/power.nix
     ./os/colors.nix
     ./os/kicad.nix
+   ./os/cache-tmpfs.nix
 
     ./temp.nix
   ];
+
+ services.cacheTmpfs.username = "gax";
 }
