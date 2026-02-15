@@ -24,9 +24,19 @@ input {
 
 output "eDP-1" {
     mode "1920x1080@120.030"
-    scale 1.4
+    scale 1.0
     transform "normal"
-    position x=1280 y=0
+    position x=0 y=0
+}
+
+output "DP-1" {
+    transform "normal"
+    position x=0 y=-1080 // centered above eDP-1
+    scale 1.0
+}
+
+output "HDMI-A-1" {
+    mode "1920x1080@60.000"
 }
 
 layout {
@@ -62,11 +72,11 @@ layout {
         offset x=0 y=5
         color "#0007"
     }
+
+    background-color "transparent"
 }
 
-spawn-at-startup "waybar"
-spawn-at-startup "waypaper" "--restore"
-spawn-at-startup "hypridle"
+spawn-at-startup "noctalia-shell"
 
 hotkey-overlay {
     skip-at-startup
@@ -75,7 +85,6 @@ hotkey-overlay {
 prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
 
 animations {
     // off
@@ -91,6 +100,16 @@ cursor {
     xcursor-theme "default"
     xcursor-size 20
     hide-after-inactive-ms 3000
+}
+
+layer-rule {
+    place-within-backdrop true
+}
+
+overview {
+    workspace-shadow {
+        off
+    }
 }
 
 window-rule {
@@ -131,26 +150,27 @@ xwayland-satellite {
 binds {
     Mod+Shift+o { show-hotkey-overlay; }
 
-    // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+Return repeat=false hotkey-overlay-title="Make btop appear" { spawn-sh "kitty --class btop -e btop"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-
+    // Audio & Brightness
+    XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+    XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    
     XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "-e4" "-n2" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "-e4" "-n2" "set" "10%-"; }
-
     Mod+O repeat=false { toggle-overview; }
+
+    // Core Noctalia binds
+    Mod+Space { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    Mod+S { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
+    Mod+P { spawn-sh "noctalia-shell ipc call settings toggle"; }
 
     Mod+Q repeat=false { close-window; }
 

@@ -4,15 +4,9 @@
 
   environment.systemPackages = with pkgs; [
     # Niri
-    waybar
-    mako
+    noctalia-shell
     swaybg
-    hyprlock
-    hypridle
-    fuzzel
     pavucontrol
-    networkmanagerapplet
-    waypaper
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     gnome-keyring
@@ -45,13 +39,14 @@
     terminal = "kitty";
   };
 
-  services.blueman.enable = true;
   services.gvfs.enable = true;
 
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = false;
   };
+
+  services.upower.enable = true;
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";

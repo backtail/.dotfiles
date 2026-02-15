@@ -5,3 +5,7 @@ homeconfig/.config/hyprpanel/config.json
 
 # Kicad
 homeconfig/.config/kicad/*/*.json
+
+# Theme-ing
+*.theme
+noctalia.kdl
