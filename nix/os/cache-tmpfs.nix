@@ -34,9 +34,9 @@ in
     systemd.services."setup-${cfg.username}-cache" = {
       description = "Setup ${cfg.username} cache symlink";
       after = [ "local-fs.target" ];
-      wants = [ "var-run.mount" ];  # Ensure tmp is available
+      wants = [ "var-run.mount" ]; # Ensure tmp is available
       wantedBy = [ "multi-user.target" ];
-      
+
       serviceConfig = {
         Type = "oneshot";
         RemainAfterExit = true;
@@ -47,17 +47,17 @@ in
       script = ''
         # Wait a moment for the mount to be ready
         sleep 1
-        
+
         # Get the actual UID at runtime
         USER_UID=$(id -u ${cfg.username})
         CACHE_PATH="/tmp/user-cache-${cfg.username}"
-        
+
         # Ensure the directory exists and has correct ownership
         if [ -d "$CACHE_PATH" ]; then
           chown ${cfg.username}:users "$CACHE_PATH"
           chmod 0700 "$CACHE_PATH"
         fi
-        
+
         # Handle existing .cache directory
         if [ -e /home/${cfg.username}/.cache ]; then
           if [ ! -L /home/${cfg.username}/.cache ]; then
@@ -68,7 +68,7 @@ in
             rm /home/${cfg.username}/.cache
           fi
         fi
-        
+
         # Create the symlink
         ln -sfn "$CACHE_PATH" /home/${cfg.username}/.cache
       '';

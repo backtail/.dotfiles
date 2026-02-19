@@ -22,10 +22,10 @@
     ./os/power.nix
     ./os/colors.nix
     ./os/kicad.nix
-   ./os/cache-tmpfs.nix
+    ./os/cache-tmpfs.nix
 
     ./temp.nix
   ];
 
- services.cacheTmpfs.username = "gax";
+  services.cacheTmpfs.username = "gax";
 }
