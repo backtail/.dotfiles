@@ -7,7 +7,6 @@
     tldr
     bat
     tre-command
-    wl-clipboard
     usbutils
     shellify
     nix-search

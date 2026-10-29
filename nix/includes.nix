@@ -1,31 +1,10 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
+  # Compatibility entry point for the existing /etc/nixos/configuration.nix.
+  # New deployments use the host selected from the repository flake.
   imports = [
-    ./shell/zsh.nix
-    ./shell/tools.nix
-    ./shell/development.nix
-    ./shell/helix.nix
-    ./shell/tui.nix
-    ./shell/nixos-cli.nix
-    ./os/user.nix
-    ./os/desktop.nix
-    ./os/sound.nix
-    ./os/fonts.nix
-    ./os/apps.nix
-    ./os/udev.nix
-    ./os/security.nix
-    ./os/misc.nix
-    ./os/network.nix
-    ./os/printing.nix
-    ./os/matrix.nix
-    ./os/musnix.nix
-    ./os/power.nix
-    ./os/colors.nix
-    ./os/kicad.nix
-    ./os/cache-tmpfs.nix
-
-    ./temp.nix
+    ./modules/profiles/base.nix
+    ./modules/profiles/workstation.nix
+    ./modules/profiles/laptop.nix
   ];
-
-  services.cacheTmpfs.username = "gax";
 }

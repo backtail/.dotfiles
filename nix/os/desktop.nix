@@ -4,7 +4,7 @@
 
   environment.systemPackages = with pkgs; [
     # Niri
-    noctalia-shell
+    noctalia
     swayidle
     pavucontrol
     xdg-desktop-portal-gtk

@@ -1,14 +1,20 @@
-{ config, pkgs, ... }:
-
-let
-  githubModule = builtins.fetchGit {
-    url = "https://github.com/musnix/musnix.git";
-    ref = "master";
-  };
-in
+{
+  inputs ? null,
+  ...
+}:
 {
   imports = [
-    "${githubModule}/default.nix"
+    (
+      if inputs == null then
+        "${
+          builtins.fetchGit {
+            url = "https://github.com/musnix/musnix.git";
+            ref = "master";
+          }
+        }/default.nix"
+      else
+        inputs.musnix.nixosModules.default
+    )
   ];
 
   musnix.enable = true;

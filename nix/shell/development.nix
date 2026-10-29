@@ -3,7 +3,6 @@
   environment.systemPackages = with pkgs; [
     git
     lazygit
-    vscode-fhs
     gh
     nixfmt
     difftastic
