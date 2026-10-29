@@ -1,8 +1,5 @@
 { pkgs, ... }:
 {
-  # Create group
-  users.groups.plugdev = { };
-
   users.users.gax = {
     isNormalUser = true;
     shell = pkgs.zsh;
@@ -11,7 +8,6 @@
       "networkmanager"
       "wheel"
       "dialout"
-      "plugdev"
     ];
   };
 }

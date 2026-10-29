@@ -1,0 +1,16 @@
+# Copy this file to default.nix after copying the server's generated
+# hardware-configuration.nix into this directory.
+{ ... }:
+{
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/profiles/base.nix
+    ../../modules/profiles/server.nix
+  ];
+
+  networking.hostName = "home-server";
+
+  # Preserve the value from the server's current configuration. Do not infer
+  # it from the NixOS release currently installed.
+  system.stateVersion = "REPLACE_WITH_CURRENT_VALUE";
+}

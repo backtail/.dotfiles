@@ -1,15 +1,20 @@
 {
+  inputs ? null,
   pkgs,
   ...
 }:
 
 let
   nixos-cli-url = "https://github.com/nix-community/nixos-cli/archive/refs/tags/0.15.0.tar.gz";
-  nixos-cli = import "${builtins.fetchTarball nixos-cli-url}" { inherit pkgs; };
+  nixos-cli-module =
+    if inputs == null then
+      (import "${builtins.fetchTarball nixos-cli-url}" { inherit pkgs; }).module
+    else
+      inputs.nixos-cli.nixosModules.nixos-cli;
 in
 {
   imports = [
-    nixos-cli.module
+    nixos-cli-module
   ];
 
   services.nixos-cli = {

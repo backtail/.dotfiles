@@ -1,12 +1,12 @@
 HOMECONFIG_DIR := home
-NIXCONFIG_DIR := nix
+HOST ?= $(shell hostname)
 
-NIX_FILES := $(shell find $(NIXCONFIG_DIR) -name "*.nix" -type f)
+NIX_FILES := $(shell find nix -name "*.nix" -type f) flake.nix shell.nix
 
-.PHONY: all home nix fmt delete
+.PHONY: all home nix fmt check build switch delete
 
 fmt:
-	@echo "Formatting .nix files in $(NIXCONFIG_DIR)..."
+	@echo "Formatting Nix files..."
 	@for file in $(NIX_FILES); do \
 		nixfmt $$file; \
 	done
@@ -14,11 +14,18 @@ fmt:
 home:
 	stow --verbose --dotfiles --dir=$(HOMECONFIG_DIR) --target=$$HOME --restow ./
 
-nix: fmt
-	sudo stow --verbose --dotfiles --dir=$(NIXCONFIG_DIR) --target=/etc/nixos/  --restow ./
+check:
+	nix flake check --no-build
 
-all: home fmt nix
+build:
+	nix build ".#nixosConfigurations.$(HOST).config.system.build.toplevel"
+
+switch:
+	sudo nixos-rebuild switch --flake ".#$(HOST)"
+
+nix: switch
+
+all: home switch
 
 delete:
 	stow --verbose --dotfiles --dir=$(HOMECONFIG_DIR) --target=$$HOME --delete ./
-	sudo stow --verbose --dotfiles --dir=$(NIXCONFIG_DIR) --target=/etc/nixos/ --delete ./
