@@ -6,7 +6,7 @@ generated `hardware-configuration.nix`. Shared behavior belongs in
 
 Host-specific Niri output settings live in `niri.kdl`. Each host composition
 installs its fragment as `/etc/niri/host.kdl`; the shared user configuration
-includes that path.
+includes its stable NixOS path at `/etc/static/niri/host.kdl`.
 
 To add a host:
 

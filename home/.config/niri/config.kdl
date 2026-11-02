@@ -22,8 +22,9 @@ input {
     focus-follows-mouse max-scroll-amount="10%"
 }
 
-// Installed by the active NixOS host configuration.
-include optional=true "/etc/niri/host.kdl"
+// Installed by the active NixOS host configuration. NixOS keeps declarative
+// /etc entries under /etc/static, which remains available with a mutable /etc.
+include optional=true "/etc/static/niri/host.kdl"
 
 output "DP-1" {
     transform "normal"
