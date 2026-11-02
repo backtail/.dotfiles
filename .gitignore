@@ -9,3 +9,6 @@ homeconfig/.config/kicad/*/*.json
 # Theme-ing
 *.theme
 noctalia.kdl
+
+# Noctalia wallpaper-generated palette
+home/.config/noctalia/colors.json
