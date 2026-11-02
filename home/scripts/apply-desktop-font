@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+set -eu
+
+# Read the shared GTK setting so GTK and the desktop portal agree.
+font=$(sed -n 's/^gtk-font-name=//p' "$HOME/.config/gtk-3.0/settings.ini")
+test -n "$font"
+gsettings set org.gnome.desktop.interface font-name "$font"
