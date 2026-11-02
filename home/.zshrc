@@ -42,11 +42,6 @@ function zshaddhistory() {
   fi
 }
 
-# Start niri session if not already running
-if [[ -z "$XDG_CURRENT_DESKTOP" ]] || [[ "$XDG_CURRENT_DESKTOP" != "niri" ]]; then
-    niri-session
-fi
-
 alias cd="z"
 alias ns="nix-shell"
 alias lgit="lazygit"
