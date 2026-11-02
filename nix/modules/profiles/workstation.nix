@@ -4,17 +4,11 @@
     ../../os/desktop.nix
     ../../os/sound.nix
     ../../os/apps.nix
-    ../../os/udev.nix
     ../../os/printing.nix
     ../../os/matrix.nix
-    ../../os/musnix.nix
     ../../os/colors.nix
-    ../../os/kicad.nix
     ../../temp.nix
   ];
-
-  users.groups.plugdev = { };
-  users.users.gax.extraGroups = [ "plugdev" ];
 
   services.tailscale.enable = true;
 

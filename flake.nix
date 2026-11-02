@@ -34,6 +34,8 @@
       nixosModules = {
         base = import ./nix/modules/profiles/base.nix;
         workstation = import ./nix/modules/profiles/workstation.nix;
+        engineering = import ./nix/modules/profiles/engineering.nix;
+        audio-workstation = import ./nix/modules/profiles/audio-workstation.nix;
         laptop = import ./nix/modules/profiles/laptop.nix;
         server = import ./nix/modules/profiles/server.nix;
       };

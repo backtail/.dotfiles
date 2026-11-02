@@ -52,7 +52,15 @@ Hosts import small combinations of shared profiles:
 - `workstation`: graphical desktop, audio, applications and workstation
   peripherals.
 - `laptop`: power management and the tmpfs user cache.
+- `engineering`: KiCad, LTspice, FreeCAD, drawing tools, and programmer USB rules.
+- `audio-workstation`: Musnix tuning, Reaper, Mixxx, and audio routing tools.
 - `server`: headless pinentry, Syncthing and Immich.
+
+The engineering and audio-workstation profiles are optional additions to a
+workstation. Basic desktop sound remains in `workstation`. `x1-carbon` and the
+legacy compatibility entry point explicitly import both optional profiles,
+preserving their existing software and hardware support. Other hosts can select
+either or both by adding the corresponding imports to their host module.
 
 Build and activate the configuration matching the current hostname:
 

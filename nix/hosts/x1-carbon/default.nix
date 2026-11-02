@@ -4,6 +4,8 @@
     ./hardware-configuration.nix
     ../../modules/profiles/base.nix
     ../../modules/profiles/workstation.nix
+    ../../modules/profiles/engineering.nix
+    ../../modules/profiles/audio-workstation.nix
     ../../modules/profiles/laptop.nix
   ];
 

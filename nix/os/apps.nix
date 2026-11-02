@@ -9,18 +9,9 @@
 
     # Apps
     thunderbird
-    ltspice
-    drawio
-    inkscape-with-extensions
-    freecad
     obsidian
     discord
     telegram-desktop
 
-    # Audio
-    qpwgraph
-    alsa-scarlett-gui
-    reaper
-    mixxx
   ];
 }
