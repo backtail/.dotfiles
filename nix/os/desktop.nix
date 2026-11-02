@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     # Niri
     noctalia
+    ddcutil
     swayidle
     pavucontrol
     xdg-desktop-portal-gtk
@@ -41,6 +42,8 @@
     enable = true;
     powerOnBoot = false;
   };
+
+  hardware.i2c.enable = true;
 
   services.upower.enable = true;
 

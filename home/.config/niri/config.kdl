@@ -72,8 +72,8 @@ layout {
     background-color "transparent"
 }
 
-spawn-at-startup "noctalia-shell"
-// spawn-at-startup "swayidle" "-w" "timeout" "300" "niri msg action power-off-monitors" "timeout" "600" "noctalia-shell ipc call sessionMenu lockAndSuspend"
+spawn-at-startup "noctalia"
+// spawn-at-startup "swayidle" "-w" "timeout" "300" "niri msg action power-off-monitors" "timeout" "600" "noctalia msg session lock-and-suspend"
 
 hotkey-overlay {
     skip-at-startup
@@ -100,6 +100,7 @@ cursor {
 }
 
 layer-rule {
+    match namespace="^noctalia-wallpaper"
     place-within-backdrop true
 }
 
@@ -139,6 +140,17 @@ window-rule {
     default-column-width { proportion 0.7; }
 }
 
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
 xwayland-satellite {
     // off
     path "xwayland-satellite"
@@ -151,12 +163,12 @@ binds {
     Mod+Return repeat=false hotkey-overlay-title="Make btop appear" { spawn-sh "kitty --class btop -e btop"; }
 
     // Audio & Brightness
-    XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-    XF86AudioMicMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
-    XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    XF86AudioRaiseVolume { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute { spawn "noctalia" "msg" "volume-mute"; }
+    XF86AudioMicMute { spawn "noctalia" "msg" "mic-mute"; }
+    XF86MonBrightnessUp { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown { spawn "noctalia" "msg" "brightness-down"; }
     
     XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
@@ -166,9 +178,9 @@ binds {
     Mod+O repeat=false { toggle-overview; }
 
     // Core Noctalia binds
-    Mod+Space { spawn-sh "noctalia-shell ipc call launcher toggle"; }
-    Mod+S { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
-    Mod+P { spawn-sh "noctalia-shell ipc call settings toggle"; }
+    Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+S { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
+    Mod+P { spawn "noctalia" "msg" "settings-toggle"; }
 
     Mod+Q repeat=false { close-window; }
 

@@ -1,0 +1,112 @@
+[shell]
+avatar_path = "/home/gax/.face"
+clipboard_auto_paste = "off"
+clipboard_enabled = true
+font_family = "Sans Serif"
+setup_wizard_enabled = false
+telemetry_enabled = false
+
+[shell.animation]
+enabled = true
+speed = 0.61
+
+[shell.launcher]
+app_grid = false
+auto_paste = "off"
+categories = false
+layout = "full"
+sort_by_usage = true
+
+[audio]
+enable_notification_sounds = false
+enable_overdrive = true
+enable_volume_sounds = false
+
+[bar]
+order = ["main"]
+
+[bar.main]
+position = "top"
+enabled = true
+auto_hide = false
+background_opacity = 0.93
+compositor_blur = true
+concave_edge_corners = true
+margin_edge = 0
+margin_ends = 4
+padding = 8
+reserve_space = true
+show_on_workspace_switch = true
+widget_spacing = 6
+start = ["control-center", "cpu", "ram", "temp"]
+center = ["clock", "notifications"]
+end = ["tray", "caffeine", "bluetooth", "volume", "brightness", "battery"]
+
+[theme]
+mode = "dark"
+shell_mode = "follow"
+source = "wallpaper"
+sync_color_scheme = true
+wallpaper_scheme = "m3-content"
+
+[theme.templates]
+enable_builtin_templates = false
+enable_community_templates = false
+
+[wallpaper]
+enabled = true
+directory = "/home/gax/Pictures/Wallpapers"
+fill_color = "#000000"
+fill_mode = "crop"
+transition = ["fade", "disc", "stripes", "wipe", "pixel", "honeycomb"]
+transition_duration = 1500
+edge_smoothness = 0.05
+transition_on_startup = true
+
+[wallpaper.default]
+path = "/home/gax/Pictures/Wallpapers/white_LE_upscale_prime_x4.jpg"
+
+[wallpaper.automation]
+enabled = true
+interval_seconds = 60
+order = "alphabetical"
+recursive = false
+
+[backdrop]
+enabled = false
+
+[dock]
+enabled = false
+
+[notification]
+background_opacity = 1.0
+enable_daemon = true
+position = "bottom_right"
+
+[osd]
+background_opacity = 1.0
+enabled = true
+hide_delay_ms = 2000
+position = "bottom_center"
+
+[lockscreen]
+blur_intensity = 0.0
+blurred_desktop = false
+enabled = true
+lock_before_suspend = true
+tint_intensity = 0.0
+
+[bluetooth]
+connect_when_enabled = true
+
+[brightness]
+enable_ddcutil = true
+
+[location]
+address = "Berlin"
+auto_locate = false
+
+[weather]
+effects = true
+enabled = true
+unit = "metric"
