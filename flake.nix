@@ -45,6 +45,9 @@
           gnumake
           nixfmt
           stow
+          zsh
+          niri
+          noctalia
         ];
       };
     };

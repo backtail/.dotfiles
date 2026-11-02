@@ -1,5 +1,6 @@
 HOMECONFIG_DIR := home
 HOST ?= $(shell hostname)
+NIX := nix --extra-experimental-features 'nix-command flakes'
 
 NIX_FILES := $(shell find nix -name "*.nix" -type f) flake.nix shell.nix
 
@@ -22,10 +23,16 @@ desktop-font:
 	sh home/scripts/apply-desktop-font
 
 check:
-	nix flake check --no-build
+	zsh -n home/.zshrc
+	zsh -n home/.zprofile
+	sh -n home/scripts/apply-desktop-font
+	niri validate --config home/.config/niri/config.kdl
+	@for config in nix/hosts/*/niri.kdl; do niri validate --config "$$config" || exit $$?; done
+	noctalia config validate home/.config/noctalia/config.toml
+	$(NIX) flake check --no-build
 
 build:
-	nix build ".#nixosConfigurations.$(HOST).config.system.build.toplevel"
+	$(NIX) build ".#nixosConfigurations.$(HOST).config.system.build.toplevel"
 
 switch:
 	sudo nixos-rebuild switch --flake ".#$(HOST)"

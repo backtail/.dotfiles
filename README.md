@@ -75,6 +75,13 @@ layout documented in `nix/hosts/README.md`.
 
 ## Deployment
 
+`make check` validates Zsh startup files, the desktop-font helper's shell syntax,
+the shared Niri config and each host display fragment, the tracked Noctalia
+configuration, and the Nix flake. Run it in `nix develop` to use pinned validators.
+The shared Niri config may warn about its optional host include on machines
+where the system configuration has not yet been deployed; host fragments are
+also validated individually.
+
 Deploy from the permanent `~/.files` checkout. Stow links point back into that
 checkout, so do not deploy home files from a temporary worktree.
 
