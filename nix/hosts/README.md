@@ -4,12 +4,22 @@ Each machine has a directory containing a small composition module and its
 generated `hardware-configuration.nix`. Shared behavior belongs in
 `../modules/profiles/` or `../modules/services/`, not in a host module.
 
+Host-specific Niri output settings live in `niri.kdl`. Each host composition
+installs its fragment as `/etc/niri/host.kdl`; the shared user configuration
+includes that path.
+
 To add a host:
 
 1. Copy its current `/etc/nixos/hardware-configuration.nix` into a new host
    directory.
 2. Create `default.nix` and import the hardware file plus the applicable
    profiles.
+   If the host runs Niri, add its `niri.kdl` and expose it with:
+
+   ```nix
+   environment.etc."niri/host.kdl".source = ./niri.kdl;
+   ```
+
 3. Preserve the machine's existing `system.stateVersion`.
 4. Add the host to `nixosConfigurations` in the repository's `flake.nix`.
 5. Build the closure before switching:

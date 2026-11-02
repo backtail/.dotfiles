@@ -10,6 +10,8 @@
   networking.hostName = "x1-carbon";
   services.openssh.enable = true;
 
+  environment.etc."niri/host.kdl".source = ./niri.kdl;
+
   boot.loader.grub = {
     enable = true;
     device = "/dev/nvme0n1";

@@ -22,12 +22,8 @@ input {
     focus-follows-mouse max-scroll-amount="10%"
 }
 
-output "eDP-1" {
-    mode "1920x1080"
-    scale 1.4
-    transform "normal"
-    position x=0 y=0
-}
+// Installed by the active NixOS host configuration.
+include optional=true "/etc/niri/host.kdl"
 
 output "DP-1" {
     transform "normal"
