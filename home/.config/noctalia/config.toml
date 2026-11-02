@@ -2,7 +2,7 @@
 avatar_path = "/home/gax/.face"
 clipboard_auto_paste = "off"
 clipboard_enabled = true
-font_family = "Sans Serif"
+font_family = "DejaVu Sans"
 setup_wizard_enabled = false
 telemetry_enabled = false
 
