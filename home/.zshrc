@@ -51,3 +51,4 @@ alias cd="z"
 alias ns="nix-shell"
 alias lgit="lazygit"
 alias rgst='bash ~/scripts/recursive_git_status.sh'
+alias kssh='kitten ssh'
