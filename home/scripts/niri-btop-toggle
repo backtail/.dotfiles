@@ -1,0 +1,46 @@
+#!/usr/bin/env sh
+# Toggle one persistent floating btop window using a holding workspace.
+set -eu
+holding=btop-scratchpad
+
+# Ignore overlapping presses, including while Kitty creates its window.
+exec 9>"${XDG_RUNTIME_DIR:?}/niri-btop-toggle.lock"
+flock -n 9 || exit 0
+
+windows() { niri msg --json windows; }
+find_btop() { windows | jq -c '[.[] | select(.app_id == "btop")][0] // empty'; }
+action() { niri msg action "$@"; }
+
+current=$(niri msg --json workspaces | jq -ce '.[] | select(.is_focused)')
+window=$(find_btop)
+if [ -z "$window" ]; then
+    action spawn -- kitty --class btop -e btop
+    attempts=0
+    while [ "$attempts" -lt 100 ]; do
+        [ -z "$(find_btop)" ] || exit 0
+        sleep 0.05
+        attempts=$((attempts + 1))
+    done
+    echo 'btop did not open a window within five seconds' >&2
+    exit 1
+fi
+
+id=$(printf '%s' "$window" | jq -r '.id')
+current_id=$(printf '%s' "$current" | jq -r '.id')
+current_name=$(printf '%s' "$current" | jq -r '.name // ""')
+window_workspace=$(printf '%s' "$window" | jq -r '.workspace_id')
+
+if [ "$current_name" = "$holding" ]; then
+    # Viewing the holding workspace directly: keep the window accessible.
+    action focus-window --id "$id"
+elif [ "$window_workspace" = "$current_id" ]; then
+    action move-window-to-workspace --window-id "$id" --focus false "$holding"
+else
+    output=$(printf '%s' "$current" | jq -r '.output')
+    action move-window-to-floating --id "$id"
+    action move-window-to-monitor --id "$id" "$output"
+    # Re-read the index after moving monitors; indices are not workspace IDs.
+    index=$(niri msg --json workspaces | jq -er --argjson id "$current_id" '.[] | select(.id == $id) | .idx')
+    action move-window-to-workspace --window-id "$id" --focus false "$index"
+    action focus-window --id "$id"
+fi

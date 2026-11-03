@@ -26,6 +26,7 @@ check:
 	zsh -n home/.zshrc
 	zsh -n home/.zprofile
 	sh -n home/scripts/apply-desktop-font
+	sh -n home/scripts/niri-btop-toggle
 	niri validate --config home/.config/niri/config.kdl
 	@for config in nix/hosts/*/niri.kdl; do niri validate --config "$$config" || exit $$?; done
 	noctalia config validate home/.config/noctalia/config.toml

@@ -73,6 +73,8 @@ layout {
     background-color "transparent"
 }
 
+workspace "btop-scratchpad"
+
 spawn-at-startup "noctalia"
 // spawn-at-startup "swayidle" "-w" "timeout" "300" "niri msg action power-off-monitors" "timeout" "600" "noctalia msg session lock-and-suspend"
 
@@ -161,7 +163,7 @@ binds {
     Mod+Shift+o { show-hotkey-overlay; }
 
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+Return repeat=false hotkey-overlay-title="Make btop appear" { spawn-sh "kitty --class btop -e btop"; }
+    Mod+Return repeat=false hotkey-overlay-title="Toggle btop" { spawn-sh "sh ~/scripts/niri-btop-toggle"; }
 
     // Audio & Brightness
     XF86AudioRaiseVolume { spawn "noctalia" "msg" "volume-up"; }

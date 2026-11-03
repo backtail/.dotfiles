@@ -50,6 +50,7 @@
           zsh
           niri
           noctalia
+          jq
         ];
       };
     };

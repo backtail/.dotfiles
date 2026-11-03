@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     btop
+    jq
     libqalculate
     fzf
     tldr
