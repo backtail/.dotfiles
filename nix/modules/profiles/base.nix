@@ -1,5 +1,10 @@
 { ... }:
 {
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   imports = [
     ../../shell/zsh.nix
     ../../shell/tools.nix
